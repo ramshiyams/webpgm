@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+#bg{
+    background-color:pink;
+}
+</style>
+</head>
+<body id="bg">
+<h1>hello</h1>
+<button type="button" onclick="changebackground()">try it</button>
+<script>
+	let colors=['olive', 'black'];
+	let index=0;
+
+	function changebackground(){
+	   index= (index + 1) % colors.length;  
+	   document.getElementById('bg').style.backgroundColor = colors[index];
+        }
+</script>
+</body>
+</html>

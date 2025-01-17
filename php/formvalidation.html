@@ -1,0 +1,62 @@
+<html>
+<body bgcolor="pink">
+<form  onsubmit="return formvalidation()">
+<h1>APPLICATION FORM</h1>
+NAME:
+<input type="text" id="firstname"><br>
+Lastname:
+<input type="text" id="lastname"><br>
+username:
+<input type="text" id="username"><br>
+password:
+<input type="password" id="password"><br>
+confirm password:
+<input type="password" id="confirm"><br>
+number:
+<input type="number" id="phone">
+<br>
+gender:
+<label for="male">male</label>
+<input type="radio" id="male">
+<label for="female">female</label>
+<input type="radio" id="female">
+<button type="submit" >register</button>
+</form>
+<script>
+function formvalidation()
+{
+const frstname=document.getElementById('firstname').value.trim();
+const lastname=document.getElementById('lastname').value.trim();
+const username=document.getElementById('username').value.trim();
+const passwd=document.getElementById('password').value.trim();
+const cnfrm=document.getElementById('confirm').value.trim();
+const mal=document.getElementById('male').checked;
+const fmal=document.getElementById('female').checked;
+const num=document.getElementById('phone').value.trim();
+if(!frstname || !lastname || !username|| !passwd|| !cnfrm|| !num)
+{
+	alert("all fields are requied");
+	return false;
+}
+if(passwd!==cnfrm)
+{
+	alert("password do not match");
+	return false;
+}
+if(passwd.length<8)
+{
+	alert("it must be 8digit or more");
+	return false;
+}
+if(num.length!==10||isNaN(num))
+{
+	alert("please reenter the  number");
+	return false;
+}
+{
+	alert("is succesfull");
+	return true;
+}
+</script>
+</body>
+</html>
